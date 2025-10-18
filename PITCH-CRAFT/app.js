@@ -11,6 +11,10 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const signupBtn = document.getElementById("signup");
 const loginBtn = document.getElementById("login");
+const formContainer = document.getElementById("form-container")
+const mainContainer = document.getElementById("main-content")
+const launching = document.getElementById("launching")
+const startupSection = document.getElementById("startup-section")
 
 signupBtn.addEventListener("click", async ()=> {
    const {data , error} = await supabase.auth.signUp(
@@ -39,12 +43,24 @@ loginBtn.addEventListener("click", async () => {
 
     if(error) {
         alert(error.message)
-        console.log(error);        
+        console.log(error);    
+        return;    
     }
 
-    alert("Successfully logged in")
-    console.log(data);
-    
+    if(data) {
+        formContainer.classList.add("hidden")
+        mainContainer.classList.remove("hidden")
+        alert("Successfully logged in")
+        console.log(data);
+        
+    }
+
+})
+
+launching.addEventListener("click", async() =>{
+   formContainer.classList.add("hidden")
+   mainContainer.classList.add("hidden")
+   launching.classList.remove("hidden")
 })
 
 
