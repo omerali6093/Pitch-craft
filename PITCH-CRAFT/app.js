@@ -7,3 +7,44 @@ const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_API_KEY);
 console.log(supabase);
 
 
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const signupBtn = document.getElementById("signup");
+const loginBtn = document.getElementById("login");
+
+signupBtn.addEventListener("click", async ()=> {
+   const {data , error} = await supabase.auth.signUp(
+    {
+        email: emailInput.value,
+        password: passwordInput.value
+    }
+   )
+
+   if(error) {
+    alert(error.message)
+    console.log(error);
+   }
+
+   alert("Successfully logged in please check your email")
+   console.log(data)
+    
+});
+
+
+loginBtn.addEventListener("click", async () => {
+    const {data, error} = await supabase.auth.signInWithPassword({
+        email: emailInput.value,
+        password: passwordInput.value
+    })
+
+    if(error) {
+        alert(error.message)
+        console.log(error);        
+    }
+
+    alert("Successfully logged in")
+    console.log(data);
+    
+})
+
+
