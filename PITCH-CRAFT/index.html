@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <link rel="stylesheet" href="style.css">
+    <title>Pitching Craft</title>
+</head>
+<body>
+
+
+    <section class="form-container-section flex items-center justify-center">
+        <div class="form-container mt-20 bg-white h-90 w-[400px] h-[450px] rounded-2xl" id="form-container">
+
+            <div class="register-container p-10 rounded-3xl">
+
+                <div class="logo-form flex items-center justify-center">
+                    <img src="./images/pitch-craft-logo.png" alt="" width="180px">
+                </div>
+
+                <div class="top-form flex flex-col gap-1 mt-5">
+                    <h2 class="text-[20px] text-blue-600">Login or Create an account</h2>
+                    <h1 class="text-[16px] font-semibold">Use email and password to continue</h1>
+                </div>
+
+                <div class="email-password flex flex-col gap-4 mt-5">
+                    <!-- <input type="text" placeholder="Username" id="username"
+                        class="border border border-gray-300 h-9 rounded-lg outline-none"> -->
+                    <input type="text" placeholder=" Email Address" id="email"
+                        class="border border border-gray-300 h-9 rounded-lg outline-none">
+                    <input type="text" placeholder=" Password" id="password"
+                        class="border border border-gray-300 h-9 rounded-lg outline-none">
+                </div>
+
+                <div class="signup-login flex flex-col w-full gap-4 mt-8">
+                    <button class="bg-blue-400 text-white rounded-3xl cursor-pointer p-1" id="signup">Sign Up</button>
+                    <button class="bg-blue-400 text-white rounded-3xl cursor-pointer p-1" id="login">Login</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
